@@ -1,1 +1,1 @@
-Repository of our business projet - Team NumberOne
+Repository of our business project - Team NumberOne
