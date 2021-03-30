@@ -4,7 +4,7 @@ import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex)
 
-var url;
+const url = "http://localhost:8000/products";
 const headers = { Accept: "application/json" };
 
 export default new Vuex.Store({
@@ -31,12 +31,12 @@ export default new Vuex.Store({
      setProducts(state, payload) {
        state.products = payload;
      },
-     addToCart(state, payload) { 
+     addToCart(state, payload) {
       console.log(payload);
       state.inCart.push(payload);
      },
-     removeFromCart(state, item) { 
-       state.inCart.splice(item, 1); 
+     removeFromCart(state, item) {
+       state.inCart.splice(item, 1);
      },
      logout(state) {
       state.user.isAuthenticated = false;
@@ -103,12 +103,12 @@ export default new Vuex.Store({
      setProducts(state, payload) {
        state.products = payload;
      },
-     addToCart(state, payload) { 
+     addToCart(state, payload) {
       console.log(payload);
       state.inCart.push(payload);
      },
-     removeFromCart(state, item) { 
-       state.inCart.splice(item, 1); 
+     removeFromCart(state, item) {
+       state.inCart.splice(item, 1);
      },
      logout(state) {
       state.user.isAuthenticated = false;
