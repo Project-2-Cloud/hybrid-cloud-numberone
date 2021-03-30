@@ -1,7 +1,7 @@
 # build stage
 FROM node:lts-alpine as build-stage
 WORKDIR /app
-COPY /shopping-cart/package*.json ./
+COPY package*.json ./
 RUN npm cache clean --force
 RUN npm install
 COPY . .
