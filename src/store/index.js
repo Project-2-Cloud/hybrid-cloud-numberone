@@ -20,7 +20,7 @@ export default new Vuex.Store({
     },
     endpoints: {
       login: "http://localhost:3000/login",
-      products: "http://localhost:8080/products"
+      products: "http://localhost:8000/products"
     },
    },
    getters: {
