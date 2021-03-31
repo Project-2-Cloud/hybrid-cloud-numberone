@@ -6,7 +6,7 @@
       </ul>
       <ul class="nav navbar-nav">
         <router-link to="/" tag="li" v-if="!isAuthenticated" class="nav-item" active-class="active">
-          <a @click="onLoginClicked" class="nav-link">Login</a>
+          <a @click="onLoginClicked" class="nav-link mr-1">Login</a>
         </router-link>
         <li v-if="isAuthenticated" class="li-pointer nav-item">
           <div class="dropdown">
