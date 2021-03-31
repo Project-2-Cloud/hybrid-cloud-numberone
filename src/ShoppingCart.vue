@@ -36,7 +36,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-dismiss="modal">Keep shopping</button>
-                    <button class="btn btn-primary green" @click="checkout()">Check out</button>
+                    <button class="btn btn-success green" @click="checkout()">Check out</button>
                 </div>
             </div>
         </div>
