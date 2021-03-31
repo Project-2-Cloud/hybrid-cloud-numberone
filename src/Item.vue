@@ -11,7 +11,7 @@
         <div class="row">
           <p class="col-6 lead">${{ item.price }}</p>
           <p class="col-6">
-            <button class="btn btn-success" :disabled="item.quantity === 0" @click="addToCart(item)">
+            <button class="btn btn-success green" :disabled="item.quantity === 0" @click="addToCart(item)">
               Add to cart
             </button>
           </p>
@@ -53,6 +53,11 @@ export default {
 .remain {
   color: #d17581;
 }
+
+.green {
+  background-color: #22B382;
+}
+
 
 .grow {
   width: 90%;

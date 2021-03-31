@@ -1,7 +1,7 @@
 <template>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation">
   <div class="container">
-    <router-link to="/" class="navbar-brand mr-auto">Blue Online Store</router-link>
+    <router-link to="/" class="navbar-brand mr-auto">Fair Lab Online Store</router-link>
       <ul class="navbar-nav mr-auto">
       </ul>
       <ul class="nav navbar-nav">
@@ -53,3 +53,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.green {
+  background-color: #22B382;
+}
+
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#shoppingCart">
+    <button class="btn btn-primary navbar-btn green" data-toggle="modal" data-target="#shoppingCart">
       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
       ( {{ numInCart }} )
     </button>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-dismiss="modal">Keep shopping</button>
-                    <button class="btn btn-primary" @click="checkout()">Check out</button>
+                    <button class="btn btn-primary green" @click="checkout()">Check out</button>
                 </div>
             </div>
         </div>
@@ -78,3 +78,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.green {
+  background-color: #22B382;
+}
+
+</style>
