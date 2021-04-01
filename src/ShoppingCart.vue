@@ -71,11 +71,11 @@ export default {
     checkout() {
       if (this.isAuthenticated) {
         if (this.numInCart == 0) {
-          alert('Your cart is empty!');
+          this.$alert('Your cart is empty!');
           return
         }    
       } else {
-          alert('Please login to checkout');
+          this.$alert("Please login to checkout");
         return
       }
 
