@@ -1,6 +1,6 @@
 <template>
   <div class="col-sm-4 item">
-    <div class="card text-center" >
+    <div class="card text-center cardSize" >
       <div>
         <img :src="item.thumbnail_url" alt="" class="card-img-top grow">
       </div>
@@ -49,6 +49,11 @@ export default {
 </script>
 
 <style scoped>
+
+.cardSize{
+  width: 18rem;
+}
+
 
 .remain {
   color: #d17581;
