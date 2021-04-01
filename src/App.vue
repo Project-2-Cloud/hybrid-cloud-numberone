@@ -4,7 +4,7 @@
     <router-view/>
   </div>
 </template>
-	
+
 <script>
 import NavHeader from "@/NavHeader.vue"
 export default {
