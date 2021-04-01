@@ -5,7 +5,7 @@
       ( {{ numInCart }} )
     </button>
     <div id="shoppingCart" class="modal fade">
-        <div class="modal-dialog">
+        <div ref="modal" class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
@@ -79,11 +79,20 @@ export default {
         return
       }
 
-    let jsonInCart = JSON.stringify(this.inCart);
-    let obj = { jsonInCart  }
-    console.log(obj)
+    // let jsonInCart = JSON.stringify(this.inCart);
+    // let obj = { jsonInCart  }
     // this.$store.dispatch("buyProduct", obj);
-    this.$alert("Order has been placed.");
+
+    this.$fire({
+    text: "Order has been made!",
+    }).then(() => {
+      this.$store.commit('emptyCart');
+      this.$router.go()
+    });
+    
+
+    console.log(this.inCart);
+    
     },
   }
 };

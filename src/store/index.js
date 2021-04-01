@@ -43,6 +43,9 @@ export default new Vuex.Store({
      removeFromCart(state, item) {
        state.inCart.splice(item, 1);
      },
+     emptyCart(state) {
+       state.inCart = [];
+     },
      logout(state) {
       state.user.isAuthenticated = false;
       state.user.name = "";
