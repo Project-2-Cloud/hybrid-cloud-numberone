@@ -45,6 +45,8 @@
     </div>
   </div>
 </template>
+
+
 <script>
 export default {
   name: 'ShoppingCart',
@@ -76,6 +78,7 @@ export default {
           alert('Please login to checkout');
         return
       }
+    
     },
   }
 };

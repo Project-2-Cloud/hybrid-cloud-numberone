@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../Login.vue'
+import Checkout from '../views/Checkout.vue'
 
 Vue.use(VueRouter)
 
@@ -12,6 +13,11 @@ const routes = [
     component: Home
   },
   { path: '/loginwithtoken', name: 'loginwithtoken', component: Login },
+  {
+    path: '/checkout',
+    name: 'Checkout',
+    component: Checkout
+  },
 ]
 
 const router = new VueRouter({

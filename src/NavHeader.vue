@@ -9,11 +9,11 @@
           <a @click="onLoginClicked" class="nav-link mr-1">Login</a>
         </router-link>
         <li v-if="isAuthenticated" class="li-pointer nav-item">
-          <div class="dropdown">
+          <div class="dropdown mr-2">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {{ getUserName() }}
             </button>
-            <div class="dropdown-menu mr-15" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="#">Account Settings</a>
               <a v-if="isPartner" @click="onRegisterClicked" class="dropdown-item" href="#">Register Product</a>
               <a @click="onLogoutClicked" class="dropdown-item">Logout {{ userEmail }}</a>
