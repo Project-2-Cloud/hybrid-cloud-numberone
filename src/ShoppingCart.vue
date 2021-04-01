@@ -78,7 +78,7 @@ export default {
           alert('Please login to checkout');
         return
       }
-    
+    alert("You bought it!");
     },
   }
 };
