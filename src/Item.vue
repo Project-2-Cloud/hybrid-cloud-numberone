@@ -11,7 +11,7 @@
         <div class="row">
           <p class="col-6 lead">${{ item.price }}</p>
           <p class="col-6">
-            <button class="btn btn-success green mt-auto" :disabled="item.quantity === 0" @click="addToCart(item)">
+            <button class="btn btn-success green align-self-end" :disabled="item.quantity === 0" @click="addToCart(item)">
               Add to cart
             </button>
           </p>
