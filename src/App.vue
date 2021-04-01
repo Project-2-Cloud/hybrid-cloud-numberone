@@ -15,11 +15,16 @@ export default {
     this.$store.commit("setUrls");
 
     this.$store.dispatch("getProducts");
+
   }
 }
 </script>
 
 <style>
+.swal2-styled.swal2-confirm {
+    background-color: #22B382 !important;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

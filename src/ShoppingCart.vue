@@ -78,7 +78,12 @@ export default {
           alert('Please login to checkout');
         return
       }
-    alert("You bought it!");
+
+    let jsonInCart = JSON.stringify(this.inCart);
+    let obj = { jsonInCart  }
+    console.log(obj)
+    // this.$store.dispatch("buyProduct", obj);
+    this.$alert("Order has been placed.");
     },
   }
 };
@@ -87,6 +92,9 @@ export default {
 <style scoped>
 .green {
   background-color: #22B382;
+}
+.swal2-styled.swal2-confirm {
+    background-color: #22B382 !important;
 }
 
 </style>

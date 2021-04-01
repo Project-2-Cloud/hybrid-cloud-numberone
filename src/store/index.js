@@ -3,9 +3,9 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import createPersistedState from "vuex-persistedstate";
 
-Vue.use(Vuex)
 
 var url;
+Vue.use(Vuex)
 const headers = { Accept: "application/json" };
 
 export default new Vuex.Store({
@@ -24,7 +24,8 @@ export default new Vuex.Store({
     endpoints: {
       login: "http://localhost:3000/login",
       partnercheck: "http://localhost:8000/check",
-      products: "http://localhost:8000/products"
+      products: "http://localhost:8000/products",
+      buyproduct: "http://localhost:8000/buyproducts"
     },
    },
    getters: {
@@ -63,14 +64,17 @@ export default new Vuex.Store({
      setUrls(state) {
        state.endpoints.login = process.env.VUE_APP_AUTH_URL;
        state.endpoints.products = process.env.VUE_APP_PRODUCTS_URL;
+       state.endpoints.buyproduct = process.env.VUE_APP_BUY_PRODUCT_URL;
+       state.endpoints.partnercheck = process.env.VUE_APP_PARTNERCHECK_URL;
        url = state.endpoints.products;
        console.log(process.env);
      },
+
+
    },
    actions: { //asynchronous
 
     async checkPartner({ state, commit }) {
-      state.endpoints.partnercheck = process.env.VUE_APP_PARTNERCHECK_URL
       let accessToken = state.user.accessToken;
       console.log("checking partner access", state.endpoints.partnercheck);
       const AuthStr = 'Bearer '.concat(accessToken);
@@ -98,6 +102,19 @@ export default new Vuex.Store({
      }
    },
 
+   buyProduct( { state }, obj) {
+    let buyproductsurl = state.endpoints.buyproduct;
+    console.log(buyproductsurl);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: obj
+    };
+    fetch(buyproductsurl, requestOptions)
+//    .then(response => response.json())
+//    .then(data => (this.postId = data.id));
+  },
+
   registerProduct({ state }, obj) {
     let productsurl = state.endpoints.products;
     console.log(productsurl);
@@ -122,6 +139,8 @@ export default new Vuex.Store({
       console.error('Error:', error);
     });
   },
+  
+
   modules: {
   }
 })
