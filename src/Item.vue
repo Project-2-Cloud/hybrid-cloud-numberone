@@ -2,7 +2,7 @@
   <div class="col-sm-4 item">
     <div class="card text-center cardSize" >
       <div>
-        <img :src="item.thumbnail_url" alt="" class="card-img-top grow">
+        <img :src="assets/logoWit.png" alt="" class="card-img-top grow">
       </div>
       <div class="card-body">
         <h5 class="card-title">{{ item.title }}</h5>
