@@ -105,18 +105,16 @@ export default new Vuex.Store({
      }
    },
 
-   buyProduct( { state }, obj) {
-    let buyproductsurl = state.endpoints.buyproduct;
-    console.log(buyproductsurl);
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: obj
-    };
-    fetch(buyproductsurl, requestOptions)
-//    .then(response => response.json())
-//    .then(data => (this.postId = data.id));
-  },
+  //  buyProduct( { state }, obj) {
+  //   let buyproductsurl = state.endpoints.buyproduct;
+  //   console.log(buyproductsurl);
+  //   const requestOptions = {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: obj
+  //   };
+  //   fetch(buyproductsurl, requestOptions)
+  // },
 
   registerProduct({ state }, obj) {
     let productsurl = state.endpoints.products;

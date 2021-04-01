@@ -13,11 +13,6 @@ const routes = [
     component: Home
   },
   { path: '/loginwithtoken', name: 'loginwithtoken', component: Login },
-  {
-    path: '/checkout',
-    name: 'Checkout',
-    component: Checkout
-  },
 ]
 
 const router = new VueRouter({

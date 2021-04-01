@@ -79,10 +79,6 @@ export default {
         return
       }
 
-    // let jsonInCart = JSON.stringify(this.inCart);
-    // let obj = { jsonInCart  }
-    // this.$store.dispatch("buyProduct", obj);
-
     this.$fire({
     text: "Order has been made!",
     }).then(() => {
