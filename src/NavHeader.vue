@@ -1,12 +1,12 @@
 <template>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation">
   <div class="container">
-    <router-link to="/" class="navbar-brand mr-auto">Fair Lab Online Store</router-link>
+    <router-link to="/" class="navbar-brand mr-auto">Blue Store</router-link>
       <ul class="navbar-nav mr-auto">
       </ul>
       <ul class="nav navbar-nav">
         <router-link to="/" tag="li" v-if="!isAuthenticated" class="nav-item" active-class="active">
-          <a @click="onLoginClicked" class="nav-link mr-1">Login</a>
+          <a @click="onLoginClicked" class="nav-link">Login</a>
         </router-link>
         <li v-if="isAuthenticated" class="li-pointer nav-item">
           <div class="dropdown">
@@ -15,12 +15,10 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="#">Account Settings</a>
+              <a v-if="isPartner" @click="onRegisterClicked" class="dropdown-item" href="#">Register Product</a>
               <a @click="onLogoutClicked" class="dropdown-item">Logout {{ userEmail }}</a>
             </div>
           </div>
-        </li>
-        <li>
-          <ShoppingCart />
         </li>
       </ul>
   </div>
@@ -28,9 +26,8 @@
 </template>
 
 <script>
-import ShoppingCart from './ShoppingCart.vue';
 export default {
-  components: { ShoppingCart },
+  components: { },
   name: 'NavHeader',
   computed: {
     userEmail() {
@@ -38,6 +35,9 @@ export default {
     },
     isAuthenticated() {
       return this.$store.state.user.isAuthenticated;
+    },
+    isPartner() {
+      return this.$store.state.user.partner;
     },
   },
   methods: {
@@ -47,16 +47,13 @@ export default {
     onLogoutClicked() {
       this.$store.commit("logout");
     },
+    onRegisterClicked() {
+      let obj = { 'description': 'description', 'id': parseInt("1"), 'price': parseInt("1000"), 'quantity': parseInt("10"), 'thumbnail_url': "thumbnail_url", 'title': "title" }
+      this.$store.dispatch("registerProduct", obj);
+    },
     getUserName() {
       return this.$store.state.user.name;
     }
   }
 }
 </script>
-
-<style scoped>
-.green {
-  background-color: #22B382;
-}
-
-</style>
