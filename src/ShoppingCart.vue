@@ -20,6 +20,7 @@
                     <table class="table">
                         <tbody>
                             <tr v-for="(item,idx) in inCart" :key="idx">
+                              
                                 <td>{{ item.title }}</td>
                                 <td>${{ item.price }}</td>
                                 <td>
@@ -28,7 +29,8 @@
                             </tr>
                             <tr>
                                 <th></th>
-                                <th>${{ total }}</th>
+                                <th v-if="total != 0">${{ total }}</th>
+                                <th v-else>No items in cart</th>
                                 <th></th>
                             </tr>
                         </tbody>
@@ -36,7 +38,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-dismiss="modal">Keep shopping</button>
-                    <button class="btn btn-success green" @click="checkout()">Check out</button>
+                    <button class="btn btn-success green" :disabled="this.numInCart == 0" @click="checkout()">Check out</button>
                 </div>
             </div>
         </div>
