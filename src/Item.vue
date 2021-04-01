@@ -4,14 +4,14 @@
       <div>
         <img src="http://landingpage-ucllteam01.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/img/output-onlinepngtools.png" alt="" class="card-img-top grow">
       </div>
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <h5 class="card-title">{{ item.title }}</h5>
         <h6 class="card-subtitle mb-2 remain">{{ item.quantity }} left in stock</h6>
         <p class="card-text">{{ item.description | shortDescription }}</p>
         <div class="row">
           <p class="col-6 lead">${{ item.price }}</p>
           <p class="col-6">
-            <button class="btn btn-success green" :disabled="item.quantity === 0" @click="addToCart(item)">
+            <button class="btn btn-success green mt-auto" :disabled="item.quantity === 0" @click="addToCart(item)">
               Add to cart
             </button>
           </p>
