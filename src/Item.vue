@@ -8,10 +8,10 @@
         <h5 class="card-title">{{ item.title }}</h5>
         <h6 class="card-subtitle mb-2 remain">{{ item.quantity }} left in stock</h6>
         <p class="card-text">{{ item.description | shortDescription }}</p>
-        <div class="row">
+        <div class="row  mt-auto">
           <p class="col-6 lead">${{ item.price }}</p>
           <p class="col-6">
-            <button class="btn btn-success green align-self-end" :disabled="item.quantity === 0" @click="addToCart(item)">
+            <button class="btn btn-success green" :disabled="item.quantity === 0" @click="addToCart(item)">
               Add to cart
             </button>
           </p>
