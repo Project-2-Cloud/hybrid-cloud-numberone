@@ -70,6 +70,7 @@ export default new Vuex.Store({
    actions: { //asynchronous
 
     async checkPartner({ state, commit }) {
+      state.endpoints.partnercheck = process.env.VUE_APP_PARTNERCHECK_URL
       let accessToken = state.user.accessToken;
       console.log("checking partner access", state.endpoints.partnercheck);
       const AuthStr = 'Bearer '.concat(accessToken);
