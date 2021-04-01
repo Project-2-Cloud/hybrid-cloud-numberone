@@ -1,6 +1,7 @@
 <template>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation">
   <div class="container">
+    <img class="logoNav" alt="logo" src="http://landingpage-ucllteam01.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/img/output-onlinepngtools.png"/>
     <router-link to="/" class="navbar-brand mr-auto">Fair Lab Online Store</router-link>
       <ul class="navbar-nav mr-auto">
       </ul>
@@ -66,6 +67,10 @@ export default {
 <style scoped>
 .green {
   background-color: #22B382;
+}
+
+.logoNav {
+  height:50px;
 }
 
 </style>
